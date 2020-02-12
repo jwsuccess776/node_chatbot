@@ -155,6 +155,16 @@ function wait(sec) {
 
 //start conversation( continue or new play)
 async function getintents() {
+
+  //pushing topic of conversation
+  var id2 = m_answer + '_name';
+  var answer_bot_name = document.getElementById(id2).innerHTML;
+  var id1 = m_question + '_name';
+  var question_bot_name = document.getElementById(id1).innerHTML;
+  var topic =
+    'chatting between ' + question_bot_name + ' and ' + answer_bot_name;
+  m_chatting += topic + `\n\n` + `Bot1: ` + question_bot_name + `\n` + `Bot2: ` + answer_bot_name + `\n\n`;
+  
   //init button
   $('.btn-purple-moon').prop('disabled', true);
   $('.save').prop('disabled', true);
@@ -212,15 +222,6 @@ async function startfunc_dia(array, token) {
   var i;
   console.log(name);
   console.log(token);
-
-  //pushing topic of conversation
-  var id2 = m_answer + '_name';
-  var answer_bot_name = document.getElementById(id2).innerHTML;
-  var id1 = m_question + '_name';
-  var question_bot_name = document.getElementById(id1).innerHTML;
-  var topic =
-    'chatting between ' + question_bot_name + ' and ' + answer_bot_name;
-  m_chatting += topic + `\n\n` + `Bot1: ` + answer_bot_name + `\n` + `Bot2: ` + question_bot_name + `\n\n`;
 
   //conversation sort
   array.sort(sortByProperty('name'));
@@ -325,8 +326,9 @@ function questionMessage_wa(intent) {
       var wordlen = res.question.split(" ").length;
       var question_bot_name = document.getElementById(id).innerHTML;
       var obj = '';
-      obj = res.question + '(' + wordlen + ')';
-      m_chatting += question_bot_name + `:` + obj + `\n`
+      obj = res.question;
+      indexcount ++;
+      m_chatting += `\t` + `Term: ${indexcount}` + `\n` + `\t\t` + `Bot: 1` + `\n` + `\t\t\t` + question_bot_name + `:` + obj + `\n`+ `\t\t\t` +  `ittereances: ` + wordlen + `\n\n`;
       answerMessage(res.question);
     },
     error: function(error) {
@@ -442,8 +444,8 @@ function answerMessage(intent) {
       var answer_bot_name = document.getElementById(id).innerHTML;
       var obj = '';
       var wordlen = res.from.split(' ').length;
-      obj = res.from + '(' + wordlen + ')';
-      m_chatting += answer_bot_name + `:` + obj + `\n`;
+      obj = res.from;
+      m_chatting += `\t\t` + `Bot: 2` + `\n` + `\t\t\t` + answer_bot_name + `:` + obj + `\n` + `\t\t\t` + `ittereances: ` + wordlen + `\n\n`;
       var pos = str.indexOf('bye');
       if (pos > 0) {
         var finishstr = 'the conversation have been finished.';

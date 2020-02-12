@@ -1,23 +1,32 @@
-chatting between Weather Chatbot and Transport Chatbot
+chatting between Library Chatbot and Mensa Chatbot
 
-Bot1: Transport Chatbot
-Bot2: Weather Chatbot
+Bot1: Library Chatbot
+Bot2: Mensa Chatbot
 
 	Term: 1
 		Bot: 1
-			Weather Chatbot: Hello,
+			Library Chatbot:Hi
 			ittereances: 1
 
 		Bot: 2
-			Transport Chatbot: Hi! How are you doing?
-			ittereances: 5
+			Mensa Chatbot:Hi, How can i do for you?
+			ittereances: 7
 
 	Term: 2
 		Bot: 1
-			Weather Chatbot: I am fine, thanks, and you,
+			Library Chatbot:what you have in order
+			ittereances: 5
+
+		Bot: 2
+			Mensa Chatbot:we have cappachino
+			ittereances: 3
+
+	Term: 3
+		Bot: 1
+			Library Chatbot:Thanks for the coffee, see you
 			ittereances: 6
 
 		Bot: 2
-			Transport Chatbot: fine
-			ittereances: 1
+			Mensa Chatbot:Bye See You, guten apetite
+			ittereances: 5
 
