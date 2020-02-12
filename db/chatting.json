@@ -1,0 +1,23 @@
+chatting between Weather Chatbot and Transport Chatbot
+
+Bot1: Transport Chatbot
+Bot2: Weather Chatbot
+
+	Term: 1
+		Bot: 1
+			Weather Chatbot: Hello,
+			ittereances: 1
+
+		Bot: 2
+			Transport Chatbot: Hi! How are you doing?
+			ittereances: 5
+
+	Term: 2
+		Bot: 1
+			Weather Chatbot: I am fine, thanks, and you,
+			ittereances: 6
+
+		Bot: 2
+			Transport Chatbot: fine
+			ittereances: 1
+

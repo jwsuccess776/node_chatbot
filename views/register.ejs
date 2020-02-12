@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Sign Up</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</head>
+<body style="background: linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5);">
+
+<div class="container">
+  <div style="width: 50%; margin-left: 300px; margin-top: 70px;">
+      <h2  style="color: white;font-family: fantasy;">Sign Up</h2>
+      <form action="/register_process" method="POST"  oninput='confirm_pswd.setCustomValidity(confirm_pswd.value != pswd.value ? "Passwords do not match." : "")'>
+        <div class="form-group"><label for="username"  style="color: white;font-family: fantasy;">Username:</label>
+          <input type="text" class="form-control" id="username" placeholder="Username" name="username" required style="font-family: fantasy;">
+    
+        </div>
+        <div class="form-group"><label for="email"  style="color: white;font-family: fantasy;">Email:</label>
+          <input type="email" class="form-control" id="email" placeholder="Email" name="email" required autocomplete="off" style="font-family: fantasy;">
+    
+        </div>
+        
+        <div class="form-group">
+          <label for="pwd"  style="color: white;font-family: fantasy;">Password:</label>
+          <input type="password" class="form-control" id="pwd" placeholder="Password" name="pswd" required autocomplete="off" style="font-family: fantasy;">
+        </div>
+        <div class="form-group">
+            <label for="pwd"  style="color: white; font-family: fantasy;">Confirm Password:</label>
+            <input type="password" class="form-control" id="confirm_pwd" placeholder="Confirm password" name="confirm_pswd" autocomplete="off" required style="font-family: fantasy;">
+          </div>
+        <div class="form-group form-check">
+            <label class="form-check-label" style="color: white;    font-family: fantasy;">
+            <input class="form-check-input" type="checkbox" name="remember"> Remember me
+          </label>
+        </div>
+        <button type="submit" class="btn btn-primary">Register</button>
+        <button class="btn btn-primary"><a href = "/login_process" style="color:white;">Login</a></button>
+
+        <p></p>
+    
+      </form>
+
+  </div>
+</div>
+
+</body>
+</html>
